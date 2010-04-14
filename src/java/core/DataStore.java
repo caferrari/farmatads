@@ -1,34 +1,51 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package core;
 
-import java.util.Vector;
 import java.sql.ResultSet;
+import java.util.HashMap;
 
 /**
  *
  * @group MyLastJavaApp
  * @author Carlos André Ferrari <caferrari@gmail.com>
+ * @author Glesio Paiva <glesio@gmail.com>
  */
 public class DataStore {
 
-	static Vector nome = new Vector();
-	static Vector rs = new Vector();
+	static HashMap map = new HashMap();
 
-	public static void add(ResultSet rs, String nome){
-		DataStore.nome.addElement(nome);
-		DataStore.rs.addElement(rs);
+	/**
+	 *
+	 * @param nome
+	 * @param rs
+	 */
+	public static void add(String nome, ResultSet rs) {
+		DataStore.map.put(nome, rs);
 	}
 
-	public static ResultSet get(String index){
-		try{
-			int i = DataStore.nome.indexOf(index);
-			return (ResultSet)DataStore.rs.get(i);
-		}catch (Exception e){
-			return null;
-		}
+	/**
+	 *
+	 * @param index
+	 * @return ResultSet
+	 */
+	public static ResultSet getResutSet(String index) {
+		return (ResultSet) DataStore.map.get(index);
+	}
+
+	/**
+	 *
+	 * @param d
+	 * @param nome
+	 */
+	public static void add(String nome, String valor) {
+		DataStore.map.put(nome, valor);
+	}
+
+	/**
+	 *
+	 * @param index
+	 * @return
+	 */
+	public static String getString(String index) {
+		return (String) DataStore.map.get(index);
 	}
 }

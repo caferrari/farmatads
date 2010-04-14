@@ -9,9 +9,9 @@
     <body>
         <%
             // Inicia Query String
-            PreparedStatement stmt = Banco.query("INSERT INTO pessoa (nome, telefone, email) VALUES (?, ?, ?)");
+            /*PreparedStatement stmt = Banco.query("INSERT INTO pessoa (nome, telefone, email) VALUES (?, ?, ?)");
             stmt.setString(1, "Carlos André");
-            Banco.executar(stmt);
+            Banco.executar(stmt);*/
 
             // Consulta Banco de dados
             ResultSet rs = Banco.consulta("SELECT * FROM pessoa");

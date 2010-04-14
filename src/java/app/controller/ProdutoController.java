@@ -10,8 +10,8 @@ import core.Env;
  */
 public class ProdutoController extends Controller {
 
-    public void index(){
-		Env.view = null;
+	public void index(){
+        this.disableView(true);
     }
 
 }
