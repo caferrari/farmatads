@@ -1,14 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package app.model.DTO;
 
 /**
+ * Classe DTO de Fornecedor
  *
  * @group MyLastJavaApp
- * @author Carlos André Ferrari <caferrari@gmail.com>
  */
 public class Fornecedor extends PessoaJuridica {
 

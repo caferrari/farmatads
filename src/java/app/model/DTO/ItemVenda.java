@@ -1,9 +1,9 @@
 package app.model.DTO;
 
 /**
+ * Classe DTO Item de Venda
  *
  * @group MyLastJavaApp
- * @author Carlos André Ferrari <caferrari@gmail.com>
  */
 public class ItemVenda {
 
@@ -16,6 +16,10 @@ public class ItemVenda {
 		this.venda = venda;
 		this.produto = produto;
 		this.quantidade = quantidade;
+	}
+
+    public ItemVenda() {
+
 	}
 
 	public Produto getProduto() {
@@ -39,7 +43,7 @@ public class ItemVenda {
 	}
 
 	public void setValor_venda(double valor_venda) {
-		this.valor_venda = valor_venda;
+		this.valor_venda = valor_venda * quantidade;
 	}
 
 	public Venda getVenda() {

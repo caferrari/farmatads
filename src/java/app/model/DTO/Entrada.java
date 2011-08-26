@@ -1,12 +1,11 @@
 package app.model.DTO;
 
 import java.util.Date;
-//import java.text.SimpleDateFormat;
 
 /**
+ * Classe DTO de Entrada
  *
  * @group MyLastJavaApp
- * @author Carlos André Ferrari <caferrari@gmail.com>
  */
 public class Entrada {
 

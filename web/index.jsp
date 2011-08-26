@@ -1,1 +1,1 @@
-<% response.sendRedirect("app/"); %>
+<% response.sendRedirect("app/venda/"); %>

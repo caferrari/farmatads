@@ -1,15 +1,22 @@
 package app.controller;
 
 import core.Controller;
+import core.Link;
 
 /**
+ * Controller Index
+ *
+ * Camada responsável por integrar View e Model
  *
  * @group MyLastJavaApp
- * @author Carlos André Ferrari <caferrari@gmail.com>
  */
 public class IndexController extends Controller {
 
-	public void index() {
-		this._add("x", "Hahahahah");
-	}
+    /**
+     * Página /
+     */
+    public void index() {
+        // redireciona para a tela de venda
+        this.redirect(Link.criar("venda"));
+    }
 }

@@ -1,17 +1,19 @@
 package app.model.DTO;
 
 /**
+ * Classe DTO de Produto
  *
  * @group MyLastJavaApp
- * @author Carlos André Ferrari <caferrari@gmail.com>
  */
 public class Produto {
 
 	protected int id;
 	protected String nome;
 	protected String laboratorio;
+    protected String descricao;
 	protected int quantidade;
-	protected double valor_venda;
+	protected float valor_venda;
+    protected String estoque;
 
 	public int getId() {
 		return id;
@@ -27,6 +29,14 @@ public class Produto {
 
 	public void setLaboratorio(String laboratorio) {
 		this.laboratorio = laboratorio;
+	}
+
+        public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public String getNome() {
@@ -45,11 +55,19 @@ public class Produto {
 		this.quantidade = quantidade;
 	}
 
-	public double getValor_venda() {
+        public String getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(String estoque) {
+		this.estoque = estoque;
+	}
+
+	public float getValor_venda() {
 		return valor_venda;
 	}
 
-	public void setValor_venda(double valor_venda) {
+	public void setValor_venda(float valor_venda) {
 		this.valor_venda = valor_venda;
 	}
 

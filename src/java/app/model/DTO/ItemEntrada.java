@@ -1,9 +1,9 @@
 package app.model.DTO;
 
 /**
+ * Classe DTO Item de Entrada
  *
  * @group MyLastJavaApp
- * @author Carlos André Ferrari <caferrari@gmail.com>
  */
 public class ItemEntrada {
 
@@ -12,10 +12,13 @@ public class ItemEntrada {
 	int quantidade;
 	double valor_compra;
 
-	public ItemEntrada(Entrada entrada, Produto produto, int quantidade) {
+    public ItemEntrada() { }
+
+	public ItemEntrada(Entrada entrada, Produto produto, int quantidade, double valor_compra) {
 		this.entrada = entrada;
 		this.produto = produto;
 		this.quantidade = quantidade;
+        this.valor_compra = valor_compra;
 	}
 
 	public Entrada getEntrada() {

@@ -1,9 +1,9 @@
 package app.model.DTO;
 
 /**
+ * Classe DTO de PessoaFisica
  *
  * @group MyLastJavaApp
- * @author Carlos André Ferrari <caferrari@gmail.com>
  */
 public class PessoaFisica extends Pessoa {
     

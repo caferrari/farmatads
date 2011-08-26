@@ -1,14 +1,14 @@
 package app.model.DTO;
 
 /**
+ * Classe DTO Pessoa Juridica
  *
  * @group MyLastJavaApp
- * @author Carlos André Ferrari <caferrari@gmail.com>
  */
 public class PessoaJuridica extends Pessoa {
     
-	protected String cnpj;
-    protected String razao_social;
+    protected String cnpj;
+    protected String razaoSocial;
 
     public String getCnpj() {
         return cnpj;
@@ -18,12 +18,12 @@ public class PessoaJuridica extends Pessoa {
         this.cnpj = cnpj;
     }
 
-    public String getRazao_social() {
-        return razao_social;
+    public String getRazaoSocial() {
+        return razaoSocial;
     }
 
-    public void setRazao_social(String razao_social) {
-        this.razao_social = razao_social;
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
     }
     
 }

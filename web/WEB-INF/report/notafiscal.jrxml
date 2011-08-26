@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="notafiscal" language="groovy" pageWidth="210" pageHeight="297" columnWidth="182" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14">
+	<property name="ireport.zoom" value="3.797498335832415"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="240"/>
+	<parameter name="SELECT" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[$P!{SELECT}]]>
+	</queryString>
+	<field name="id" class="java.lang.Long"/>
+	<field name="id_cliente" class="java.lang.Long"/>
+	<field name="id_funcionario" class="java.lang.Long"/>
+	<field name="data" class="java.sql.Timestamp"/>
+	<field name="forma_pagto" class="java.lang.String"/>
+	<field name="desconto" class="java.lang.Double"/>
+	<field name="valor_total" class="java.lang.Double"/>
+	<field name="fechada" class="java.lang.Boolean"/>
+	<field name="id_produto" class="java.lang.Long"/>
+	<field name="quantidade" class="java.lang.Integer"/>
+	<field name="valor_venda" class="java.lang.Double"/>
+	<field name="produto" class="java.lang.String"/>
+	<field name="cliente" class="java.lang.String"/>
+	<field name="funcionario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="182" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<text><![CDATA[CUPOM FISCAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="61" width="138" height="10"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="61" width="44" height="10"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="51" height="10"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<text><![CDATA[Atendente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="51" y="50" width="131" height="10"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{funcionario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="23" width="181" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<text><![CDATA[FARMATADS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="39" width="153" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="8" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<text><![CDATA[NUMERO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="153" y="39" width="29" height="10"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="0" width="182" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="14">
+			<staticText>
+				<reportElement x="0" y="2" width="15" height="10"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<text><![CDATA[QT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="2" width="87" height="10"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<text><![CDATA[DESCRICAO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="105" y="2" width="30" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="8" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<text><![CDATA[UNIT.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="2" width="46" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="8" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<text><![CDATA[VALOR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="1" width="181" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed" lineColor="#C5C5C5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="12" width="181" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed" lineColor="#C5C5C5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="15" height="10"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="false" pdfFontName="Courier"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="18" y="1" width="87" height="10"/>
+				<textElement>
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{produto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="135" y="1" width="46" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="8" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{valor_venda} * $F{quantidade}.doubleValue()]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="105" y="1" width="29" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="8" pdfFontName="Courier"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{valor_venda}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="14" width="134" height="10"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="13" width="181" height="1" forecolor="#010101"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#010101"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="24" width="181" height="1" forecolor="#010101"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#010101"/>
+				</graphicElement>
+			</line>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="136" y="14" width="46" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="8" isBold="true" pdfFontName="Courier-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{valor_total}]]></textFieldExpression>
+			</textField>
+			<textField pattern="-#,##0.00">
+				<reportElement x="135" y="3" width="46" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="8" isBold="false" pdfFontName="Courier"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{desconto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="3" width="134" height="10"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="false" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Desconto]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="2" width="181" height="1" forecolor="#010101"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#D9D9D9"/>
+				</graphicElement>
+			</line>
+		</band>
+	</summary>
+	<noData>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="13" width="181" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Venda sem Registro]]></text>
+			</staticText>
+		</band>
+	</noData>
+</jasperReport>

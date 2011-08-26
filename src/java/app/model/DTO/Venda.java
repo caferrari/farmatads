@@ -1,20 +1,25 @@
 package app.model.DTO;
 
 import java.util.Date;
-//import java.text.SimpleDateFormat;
 
 /**
+ * Classe DTO de Venda
  *
  * @group MyLastJavaApp
- * @author Carlos André Ferrari <caferrari@gmail.com>
  */
 public class Venda {
 
 	protected int id;
 	protected Date data;
 	protected double desconto;
+        protected double valorTotal;
+        protected String formaPagto;
 	protected Cliente cliente;
 	protected Funcionario funcionario;
+
+    public Venda(){
+        this.data = new Date();
+    }
 
 	public Cliente getCliente() {
 		return cliente;
@@ -40,12 +45,28 @@ public class Venda {
 		this.desconto = desconto;
 	}
 
+        public double getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
 	public Funcionario getFuncionario() {
 		return funcionario;
 	}
 
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
+	}
+
+        public String getFormaPagto() {
+		return formaPagto;
+	}
+
+	public void setformaPagto(String formaPagto) {
+		this.formaPagto = formaPagto;
 	}
 
 	public int getId() {
